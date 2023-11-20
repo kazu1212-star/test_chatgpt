@@ -1,0 +1,12 @@
+Style/Documentation:
+  Enabled: false
+Metrics/CyclomaticComplexity:
+  Max: 10
+Metrics/MethodLength:
+  Max: 13
+Metrics/PerceivedComplexity:
+  Max: 10
+Layout/LineLength:
+  Max: 198
+Style/IfUnlessModifier:
+  Enabled: false
