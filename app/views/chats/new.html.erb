@@ -1,0 +1,8 @@
+<div class="center-form">
+  <h1>食材からレシピ作成アプリ</h1>
+  <h3>フォームに材料を入力してください</h3>
+  <%= form_with model: @chat, url: chats_path, method: :post do |form| %>
+    <%= form.text_field :text %>
+    <%= form.submit "送信" %>
+  <% end %>
+</div>

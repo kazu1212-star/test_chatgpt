@@ -1,0 +1,9 @@
+<div class="response-container">
+  <h1>レシピ名</h1>
+  <div class="response-box">
+    <%= simple_format(@chat.response_message) %>
+  </div>
+  <div>
+    <%= link_to '材料から検索する', new_chat_path, class: "button-style" %>
+  </div>
+</div>
