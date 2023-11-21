@@ -55,6 +55,7 @@ Get your [API key](https://platform.openai.com/account/api-keys
  
 `docker-compose run web rails db:migrate`
 #### 10.プロンプトをカスタマイズ
+[ ruby-openai](https://github.com/alexrudall/ruby-openai)
 　messageのcontentに任意の指示を記述。
 ```app/mode/open_ai.rb
 class OpenAi
