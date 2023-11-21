@@ -8,14 +8,16 @@
 #### 出力結果
 <img width="958" alt="スクリーンショット 2023-11-20 13 50 19" src="https://github.com/kazu1212-star/test_chatgpt/assets/115007915/d7b72677-3491-4a2e-8145-d6f50d15bcc7">
 
-## セットアップ
+## SetUp
+### 前提
+dockerが必要です。
 ##### 1.development.envを作成
 ```
 ┣ Dockerfile
 ┣ docker-compose.yml
 ┣ development.env
 ```
-##### 2..env_templateの内容をコピーして、development.envに貼り付け
+#### 2..env_templateの内容をコピーして、development.envに貼り付け
 　コメントに従って、環境変数を追加してください
 ```.env_template
 # OpenAIのAPIキーを設定してください
@@ -30,21 +32,29 @@ MYSQL_ROOT_PASSWORD=<YourRootPassword>
 # MySQLのユーザーのパスワードを設定してください
 MYSQL_PASSWORD=<YourDbPassword>
 ```
-##### 3.APIキー作成、取得
+#### 3.APIキー作成、取得
 Get your [API key](https://platform.openai.com/account/api-keys
 )  
-##### 2.development.env　に１のAPIキーを記述
+#### 4.development.env　に１のAPIキーを追加
 ```development.env
   OPENAI_API_KEY=ここにキーを記述
 ```
-##### 3.Open AI APIへ課金
+#### 5.Open AI APIへ課金
 無料枠だと
 `Faraday::ClientError (the server responded with status 429):`となります。
 そのため課金する必要があります。
 有料には最低でも$5かかります。
 [Billing settings](https://platform.openai.com/account/billing/overview)
 
-##### 4.プロンプトをカスタマイズ
+
+#### 6.`docker compose build`実行
+#### 7.`docker compose run --rm web bin/setup`
+#### 8.`docker compose up`
+
+ もし、pending migration errorというのが出たら、
+ 
+`docker-compose run web rails db:migrate`
+#### 10.プロンプトをカスタマイズ
 　messageのcontentに任意の指示を記述。
 ```app/mode/open_ai.rb
 class OpenAi
