@@ -8,12 +8,33 @@
 #### 出力結果
 <img width="958" alt="スクリーンショット 2023-11-20 13 50 19" src="https://github.com/kazu1212-star/test_chatgpt/assets/115007915/d7b72677-3491-4a2e-8145-d6f50d15bcc7">
 
-### セットアップ
-##### 1.APIキー作成、取得
+## セットアップ
+##### 1.development.envを作成
+```
+┣ Dockerfile
+┣ docker-compose.yml
+┣ development.env
+```
+##### 2..env_templateの内容をコピーして、development.envに貼り付け
+　コメントに従って、環境変数を追加してください
+```.env_template
+# OpenAIのAPIキーを設定してください
+OPENAI_API_KEY=<APIKey>
+
+# 使用するデータベース名を設定してください（例: myapp_development）
+MYSQL_DATABASE=アプリ名_development
+
+# MySQLのrootユーザーのパスワードを設定してください
+MYSQL_ROOT_PASSWORD=<YourRootPassword>
+
+# MySQLのユーザーのパスワードを設定してください
+MYSQL_PASSWORD=<YourDbPassword>
+```
+##### 3.APIキー作成、取得
 Get your [API key](https://platform.openai.com/account/api-keys
 )  
-##### 2.envファイル作成し１のAPIキーを記述
-```.env
+##### 2.development.env　に１のAPIキーを記述
+```development.env
   OPENAI_API_KEY=ここにキーを記述
 ```
 ##### 3.Open AI APIへ課金
