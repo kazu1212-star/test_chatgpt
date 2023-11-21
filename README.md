@@ -76,3 +76,12 @@ class OpenAi
 end
 
 ```
+
+### エラーの対処
+```
+ failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: exec: "/rails-docker-mysql/entrypoint.sh": permission denie
+```
+　entrypoint.sh スクリプトの実行権限を確認し、必要に応じて変更します。以下のコマンドを使用して実行権限を付与します。
+```
+ chmod +x entrypoint.sh
+```
